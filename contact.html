@@ -6,34 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet">
+    <script>
+        function submit_clicked() {
+            alert("Now we have your details and you are wanted. We will unleash the almighty zombie force to hunt you down in 5 business days");
+            return true;
+        }
+    </script>
 </head>
 <body>
-    <div class="heading">
+    <nav class="nav-section">
         <header>
             <h1>Harry Shen</h1>
         </header>
 
-        <section class="links">
+        <aside class="links">
             <a id="about" href="index.html">About</a>
             <a id="portfolio" href="portfolio.html">Portfolio</a>
             <a id="contact" href="contact.html">Contact</a>
-        </section>
+        </aside>
 
-    </div>
-    <div class="content-block">
-        <section id=main-content>
+    </nav>
+    <main class="content-block">
+        <article id=main-content>
             <h2>Contact</h2>
             <form action="#">
                 Name<br>
-                <input class="regular_textbox" type="text" name="name"><br>
+                <input class="regular_textbox" type="text" placeholder="Your Name if you still remember it" name="name"><br>
                 Email<br>
-                <input class="regular_textbox" type="text" name="Email"><br>
+                <input class="regular_textbox" type="email" placeholder="e.g johnsmith@whatever.com" pattern=".+@.+" name="Email"><br>
                 Message<br>
-                <textarea class="textarea" rows="40" cols="50"></textarea>
-                <input id="submit" type="submit" name="Submit">
+                <textarea class="textarea" placeholder="Okay, Go type something nice here" rows="40" cols="50"></textarea>
+                <input id="submit" onclick="submit_clicked()" type="submit" name="Submit">
             </form>
-        </section>
-    </div>
+        </article>
+    </main>
     <footer>Copyright©</footer>
 </body>
 </html>

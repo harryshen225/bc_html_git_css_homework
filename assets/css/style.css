@@ -2,9 +2,13 @@ html {
     height: 100%;
 }
 
+@keyframes heartbeat {
+    from { font-size: 10px;   }
+    to   { font-size: 28px; }
+  }
 
 body {
-    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: 'Neucha', cursive;
     color: #777777;
     display: flex;
     flex-direction: column;
@@ -12,10 +16,11 @@ body {
 }
 
 h1,h2{
-    font-family: Georgia, 'Times New Roman', Times, serif
+    font-family: 'Neucha', cursive;
+    /* font-family: Georgia, 'Times New Roman', Times, serif */
 }
 
-.heading {
+.nav-section {
     width: 960px;
     margin: 0 auto;
     text-align: center;
@@ -29,19 +34,21 @@ h1 {
     color: white;
     width: 200px;
     padding: 20px;
-    /* margin-top: 10px; */
+    font-size: 33px;
     float: left;
     border: 1px solid #cccccc;
+    
 }
 
 .links {
     text-align: center;
     float: right;
     padding: 25px 0 0 0;
-    /* margin-top: 25px; */
 }
+
 a {
     color: grey;
+    font-size: 24px;
 }
 
 #portfolio {
@@ -59,7 +66,6 @@ a {
     border-top: 1px solid #eee;
     background-image: url("../images/trees.png");
     width: 100%;
-    /* min-height: 100vh; */
     flex: 1 0 auto;
 
 }
@@ -76,15 +82,15 @@ a {
 h2 {
     color: #4aaaa5;
     text-align: left;
-    padding: 30px 0 30px 0;
+    padding: 25px 0 25px 0;
     border-bottom: 2px solid #eee;
     margin: 0 auto;
     margin-bottom: 20px;
+    font-size: 30px;
 }
 
 #my-picture {
     float: left;
-    /* margin-left: 20px; */
     width:166px;
     height: 145px;
     padding: 0 20px 20px 0;
@@ -92,11 +98,11 @@ h2 {
 
 .paragraph {
     line-height: 30px;
+    font-size: 28px;
 }
 
 /* PortFoilo.html Styling */
-.project1,.project2,.project3,.project4{
-    /* float: left; */
+.projects{
     display: inline-block;
     width: 30%;
     position: relative;
@@ -109,6 +115,12 @@ h2 {
     width: 276px;
 }
 
+.heartbeat {
+    animation: heartbeat 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
+
 .proj_name {
     background-color: #4aaaa5;
     color: white;
@@ -118,7 +130,54 @@ h2 {
     width: 100%;
     padding: 20px 0 20px 0;
 }
+.generic-modal {
+    display: none;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgb(0,0,0,0.4);
+    flex: 1 0 auto;
+}
 
+
+#pacman-details {
+    background-color: #fefefe;
+    margin: auto;  
+    padding: 20px;
+    border: 2px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    display: block;
+    text-align: right;
+    padding: 0 12px 14px 0;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #pacman-video {
+      width : 1280px;
+      height: 720px;
+      margin: 0 auto;
+      flex-shrink: 0;   
+  }
 
 /* Contact.html Styling */
 form {

@@ -5,43 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio</title>
+    
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet">
+    
 </head>
 <body>
-    <div class="heading">
+    <nav class="nav-section">
         <header>
             <h1>Harry Shen</h1>
         </header>
 
-        <section class="links">
+        <aside class="links">
             <a id="about" href="index.html">About</a>
             <a id="portfolio" href="portfolio.html">Portfolio</a>
             <a id="contact" href="contact.html">Contact</a>
-        </section>
+        </aside>
 
-    </div>
+    </nav>
     
-    <div class="content-block">
-        <section id=main-content>
+    <main class="content-block">
+        <article id=main-content>
             <h2>Portfolio</h2>
-            <section class=project1>  
+            <aside class=projects id="project1">  
+                <img class="proj_image pacman-project" src="assets/images/picachu.png" alt="pic_placeholder">
+                <h3 class="proj_name heartbeat">Pacman AI</h3>
+            </aside>
+            <aside class=projects>  
                 <img class="proj_image" src="assets/images/picachu.png" alt="pic_placeholder">
                 <h3 class="proj_name">Pacman AI</h3>
-            </section>
-            <section class=project2>  
+            </aside>
+            <aside class=projects>  
                 <img class="proj_image" src="assets/images/picachu.png" alt="pic_placeholder">
                 <h3 class="proj_name">Pacman AI</h3>
-            </section>
-            <section class=project3>  
+            </aside>
+            <aside class=projects>  
                 <img class="proj_image" src="assets/images/picachu.png" alt="pic_placeholder">
                 <h3 class="proj_name">Pacman AI</h3>
-            </section>
-            <section class=project4>  
-                <img class="proj_image" src="assets/images/picachu.png" alt="pic_placeholder">
-                <h3 class="proj_name">Pacman AI</h3>
-            </section>
-        </section>
+            </aside>
+        </article>
+    </main>
+
+    <div class="generic-modal">
+        <div id="pacman-details">
+            <span class="close">Close Window</span>
+            <iframe id="pacman-video" src="https://www.youtube.com/embed/X-sRT_sGFlE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
+
     <footer>Copyright©</footer>  
+
+    <script>
+            // get generic modal object
+            var generic_modal = document.getElementsByClassName("generic-modal")[0];
+            // get project class
+            var projects = document.getElementsByClassName("proj_name")[0];
+            // get the "close window" object
+            var close = document.getElementsByClassName("close")[0];
+    
+            projects.onclick = function() {
+                generic_modal.style.display="block";
+                console.log(generic_modal.style.display);
+            }
+    
+            close.onclick = function() {
+                generic_modal.style.display="none";
+                console.log("project clicked");
+            }
+    
+            window.onclick = function(event) {
+                if (event.target == generic_modal) {
+                    generic_modal.style.display = "none";
+                    console.log("project clicked");
+                }
+            }
+        </script>
+
 </body>
 </html>
