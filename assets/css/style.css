@@ -3,9 +3,20 @@ html {
 }
 
 @keyframes heartbeat {
-    from { font-size: 10px;   }
-    to   { font-size: 28px; }
+    from { font-size: 10px; }
+    to   { font-size: 25px; }
   }
+
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem) scale(.5);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
 
 body {
     font-family: 'Neucha', cursive;
@@ -113,13 +124,8 @@ h2 {
 .proj_image {
     height: 300px;
     width: 276px;
+    animation: pop-in .2s ease-out forwards;
 }
-
-.heartbeat {
-    animation: heartbeat 0.5s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-  }
 
 .proj_name {
     background-color: #4aaaa5;
@@ -129,7 +135,20 @@ h2 {
     text-align: center;
     width: 100%;
     padding: 20px 0 20px 0;
+    animation: pop-in .8s ease-out forwards;
 }
+
+
+.heartbeat {
+    animation-delay: 1s;
+    animation: heartbeat 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    
+  }
+
+
+
 .generic-modal {
     display: none;
     margin: 0 auto;
@@ -155,6 +174,10 @@ h2 {
     width: 80%;
 }
 
+#pacman-h3:hover{
+    background-color: purple;
+}
+
 /* The Close Button */
 .close {
     color: #aaaaaa;
@@ -173,10 +196,11 @@ h2 {
   }
 
   #pacman-video {
-      width : 1280px;
-      height: 720px;
-      margin: 0 auto;
-      flex-shrink: 0;   
+    width : 1280px;
+    height: 720px;
+    margin: 0 auto;
+    margin-left: 80px;
+    flex-shrink: 1;   
   }
 
 /* Contact.html Styling */
