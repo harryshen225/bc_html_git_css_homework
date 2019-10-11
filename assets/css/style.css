@@ -18,6 +18,11 @@ html {
     }
 }
 
+@keyframes wiggling {
+    from { transform: rotate(5deg); }
+    to   { transform: rotate(-5deg); }
+}
+
 body {
     font-family: 'Neucha', cursive;
     color: #777777;
@@ -26,17 +31,12 @@ body {
     height: 100vh;
 }
 
-h1,h2{
-    font-family: 'Neucha', cursive;
-    /* font-family: Georgia, 'Times New Roman', Times, serif */
-}
-
 .nav-section {
     width: 960px;
     margin: 0 auto;
     text-align: center;
     background-color: #ffffff;
-    position: relative;
+    /* position: relative; */
 }
 
 h1 {
@@ -86,7 +86,7 @@ a {
     width: 920px;
     margin: 0 auto;
     margin-top: 20px;
-    position: relative;
+    /* position: relative; */
     padding: 0 20px 20px 20px;   
 }
 
@@ -144,9 +144,7 @@ h2 {
     animation: heartbeat 0.5s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
-    
   }
-
 
 
 .generic-modal {
@@ -159,10 +157,10 @@ h2 {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+
     background-color: rgb(0,0,0);
     background-color: rgb(0,0,0,0.4);
-    flex: 1 0 auto;
+    
 }
 
 
@@ -171,11 +169,18 @@ h2 {
     margin: auto;  
     padding: 20px;
     border: 2px solid #888;
-    width: 80%;
+    width: 70%;
+    /* overflow: auto; */
+    position: relative;
+    /* flex: 1 0 auto; */
 }
 
 #pacman-h3:hover{
     background-color: purple;
+    animation: wiggling 0.02s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    cursor: zoom-in;
 }
 
 /* The Close Button */
@@ -195,13 +200,31 @@ h2 {
     cursor: pointer;
   }
 
-  #pacman-video {
-    width : 1280px;
-    height: 720px;
-    margin: 0 auto;
-    margin-left: 80px;
-    flex-shrink: 1;   
+  .iframe-container {
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
   }
+   
+  .iframe-container iframe {
+     border: 0;
+     height: 100%;
+     left: 0;
+     position: absolute;
+     top: 0;
+     width: 100%;
+  }
+   
+  /* 4x3 Aspect Ratio */
+  .iframe-container-4x3 {
+    padding-top: 75%;
+  }
+/* 
+  #pacman-video {
+    width:1280px;
+    height:720px;
+    margin: auto;
+  } */
 
 /* Contact.html Styling */
 form {
